@@ -230,6 +230,7 @@ public class Main {
         int h = (int) Math.round(Math.random() * 24);
         int min = (int) Math.round(Math.random() * 60);
         int s = (int) Math.round(Math.random() * 60);
+        int days = 0;
 
         System.out.println("Pradiniai duomenys: " + h + " h. " + min + " min " + s + " s.");
 
@@ -247,10 +248,18 @@ public class Main {
                 min -= 60;
                 h += 1;
             }
+            if (h >= 24) {
+                h -= 24;
+                days += 1;
+            }
         }
 
-
-        System.out.println("Laikais su pridėtomis sekundėmis: " + h + " h. " + min + " min " + s + " s.");
+        if (days == 0)
+        {
+            System.out.println("Laikais su pridėtomis sekundėmis: " + h + " h. " + min + " min " + s + " s.");
+        } else {
+            System.out.println("Laikais su pridėtomis sekundėmis: " + days + "d. " + h + " h. " + min + " min " + s + " s.");
+        }
 
         // 10.
 
